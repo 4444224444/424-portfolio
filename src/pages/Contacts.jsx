@@ -43,10 +43,7 @@ function Contacts() {
   return (
     <section className={styles.contactPage}>
       <div className={styles.inner}>
-        <h1 className={styles.title}>Contact</h1>
-        <p className={styles.subtitle}>
-          아래에 연락처와 메시지를 남겨주시면 메일로 바로 도착한다.
-        </p>
+        <h1 className={styles.title}>CONTACT</h1>
 
         <form className={styles.form} onSubmit={handleSubmit}>
           <label className={styles.label}>
@@ -93,14 +90,6 @@ function Contacts() {
             {status === 'sending' ? 'Sending…' : 'Send'}
           </button>
 
-          {status === 'success' && (
-            <p className={styles.success}>메시지가 전송되었다. 확인 후 답장하겠다.</p>
-          )}
-          {status === 'error' && (
-            <p className={styles.error}>
-              전송 중 오류가 발생했다. 잠시 후 다시 시도해 달라.
-            </p>
-          )}
         </form>
       </div>
     </section>

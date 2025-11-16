@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     service: 'gmail',
     auth: {
       user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS, // 앱 비밀번호 권장
+      pass: process.env.EMAIL_PASS, 
     },
   })
 

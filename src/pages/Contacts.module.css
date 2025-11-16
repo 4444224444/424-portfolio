@@ -1,0 +1,74 @@
+.contactPage {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.title {
+  font-size: 13rem;
+  font-weight: 700;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px; /* 동그라미 간격 */
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+
+  background: #141414;        /* 동그라미 내부 색 */
+  border: 2px solid #C0C6D2;  /* 테두리 색 */
+
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+  color: #C0C6D2;             /* 텍스트도 보이게 */
+}
+
+
+.input,
+.textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #C0C6D2;
+  resize: none;
+}
+
+.button {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: none;
+  background: #C0C6D2;
+  color: #141414;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}

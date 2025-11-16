@@ -1,0 +1,29 @@
+.portfolioPage {
+  display: flex;
+  justify-content: center;   /* 가로 중앙 */
+  padding-top: 120px;        /* 헤더랑 여백 */
+}
+
+.inner {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.title {
+  text-align: center;     /* 중앙 정렬 */
+  font-size: 14rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  padding: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2개씩 가로 정렬 */
+  gap: 40px; /* 카드 간 간격 */
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}

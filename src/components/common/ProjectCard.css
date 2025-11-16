@@ -1,0 +1,59 @@
+/* 카드 전체 */
+.project-card {
+  width: 100%;
+}
+
+/* 링크가 전체를 세로로 감싸도록 */
+.project-card__link {
+  display: flex;
+  flex-direction: column; /* 위: 이미지 / 아래: 텍스트 */
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ================== 썸네일 영역 ================== */
+
+.project-card__thumb {
+  width: 100%;
+  height: 400px;          /* 이미지 박스 높이 */
+  background: #000;       /* 이미지 없을 때도 검정 박스 */
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.project-card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card__thumb--empty {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+/* ================== 텍스트 영역 ================== */
+
+.project-card__body {
+  margin-top: 14px;            /* 이미지 밑에 떨어지는 여백 */
+  padding: 0;
+  background: transparent !important;
+  position: static !important; /* 혹시 남아 있는 absolute 강제로 끔 */
+}
+
+/* 1줄째: 툴(작은 글씨) */
+.project-card__tools {
+  font-size: 12px;
+  color: #aaa;
+  letter-spacing: -0.2px;
+  margin-bottom: 4px;
+}
+
+/* 2줄째: 제목(조금 큰 글씨) */
+.project-card__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.3;
+}

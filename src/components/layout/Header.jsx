@@ -1,12 +1,14 @@
-function Header({ onMenuClick }) {
+// src/components/layout/Header.jsx
+import styles from './Header.module.css'
+
+function Header({ onMenuClick, isOpen }) {
   return (
-    <header className="header">
-      <div className="logo">424 PORTFOLIO</div>
+    <header className={styles.header}>
       <button
-        className="hamburger-btn"
+        className={`${styles.hamburgerBtn} ${isOpen ? styles.open : ''}`}
         type="button"
         onClick={onMenuClick}
-        aria-label="Open menu"
+        aria-label="Toggle menu"
       >
         <span />
         <span />
@@ -17,3 +19,5 @@ function Header({ onMenuClick }) {
 }
 
 export default Header
+
+

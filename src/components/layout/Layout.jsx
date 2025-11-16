@@ -1,3 +1,4 @@
+// src/components/layout/Layout.jsx
 import { Outlet } from 'react-router-dom'
 import { useState } from 'react'
 import Header from './Header.jsx'
@@ -11,7 +12,7 @@ function Layout() {
 
   return (
     <div className="app-wrapper">
-      <Header onMenuClick={toggleMenu} />
+      <Header onMenuClick={toggleMenu} isOpen={isMenuOpen} />
       <SideMenu isOpen={isMenuOpen} onClose={closeMenu} />
       <main className="page-container">
         <Outlet />

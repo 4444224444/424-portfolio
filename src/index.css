@@ -4,19 +4,16 @@
   padding: 0;
 }
 
+html {
+  overflow-x: hidden; 
+}
+
 body {
-  margin: 0;
-  font-family: 'Orbitron', system-ui, -apple-system, BlinkMacSystemFont,
-  'pretendard', sans-serif;
-  background-color: #141414;
-  color: #C0C6D2;
+    font-family: 'Syncopate', 'pretendard';
+    background-color: #E7E7E7; 
+    overflow-x: hidden; 
 }
 
 
-
-/* Main area */
-.page-container {
-  padding-top: 56px;
-}
 
 

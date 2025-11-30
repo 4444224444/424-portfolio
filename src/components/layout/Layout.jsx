@@ -2,7 +2,7 @@
 import { Outlet } from 'react-router-dom'
 import { useState } from 'react'
 import Header from './Header.jsx'
-import SideMenu from './SideMenu.jsx'
+import Menu from './Menu.jsx'
 
 function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -13,7 +13,7 @@ function Layout() {
   return (
     <div className="app-wrapper">
       <Header onMenuClick={toggleMenu} isOpen={isMenuOpen} />
-      <SideMenu isOpen={isMenuOpen} onClose={closeMenu} />
+      <Menu isOpen={isMenuOpen} onClose={closeMenu} />
       <main className="page-container">
         <Outlet />
       </main>

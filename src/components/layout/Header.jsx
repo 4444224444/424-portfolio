@@ -5,14 +5,11 @@ function Header({ onMenuClick, isOpen }) {
   return (
     <header className={styles.header}>
       <button
-        className={`${styles.hamburgerBtn} ${isOpen ? styles.open : ''}`}
+        className={`${styles.menuBtn} ${isOpen ? styles.open : ''}`}
         type="button"
         onClick={onMenuClick}
-        aria-label="Toggle menu"
       >
-        <span />
-        <span />
-        <span />
+        {isOpen ? 'CLOSE' : 'MENU'}
       </button>
     </header>
   )

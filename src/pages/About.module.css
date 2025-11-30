@@ -1,0 +1,310 @@
+.aboutPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.Hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  padding: 0 10vw;
+}
+
+.HeroLine {
+  margin: 0;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-weight: 700;
+  letter-spacing: -0.1em;
+  text-transform: lowercase;
+  color: #FF7EA3;
+  line-height: 1.05;
+  transition: transform 0.6s ease;
+}
+
+.HeroLine + .HeroLine {
+  margin-top: 0.15em;
+}
+
+.HeroLine1 {
+  margin-right: 20rem;
+  align-self: flex-start;
+}
+
+.HeroLine4 {
+  margin-left: 50rem;
+  align-self: flex-end;
+}
+.heroRow {
+  display: flex;
+  align-items: baseline;
+}
+
+.heroPrefix,
+.heroSuffix {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  font-weight: 700;
+}
+
+/* 왼쪽 'i am' */
+.heroPrefix {
+  transform: translateX(-80px);
+  color: #FF7EA3;
+  font-size: 2rem;
+  letter-spacing: -0.01rem;
+  text-transform: lowercase;
+  margin-top: 1.5rem;
+  margin-right: -9rem; 
+}
+
+/* 오른쪽 직업 텍스트 */
+.heroSuffix {
+  transform: translateX(50px);
+  color: #FF7EA3;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -0.01rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-top: 0.5rem;
+  margin-left: -8rem;   /* 아주 살짝 왼쪽 당기기 */
+}
+
+/* ===========================
+   HeroActive → 등장 + 밀림 효과
+=========================== */
+
+.HeroActive .heroPrefix {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.05s;
+}
+
+.HeroActive .heroSuffix {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.05s;
+}
+
+/* 메인 텍스트가 "안쪽으로 밀리는" 효과 */
+.HeroActive .HeroLine1 {
+  transform: translateX(150px);
+}
+
+.HeroActive .HeroLine4 {
+  transform: translateX(-150px);
+}
+
+
+
+
+.aboutTextContainer {
+  margin-left: 4rem;
+  max-width: 800px;
+}
+
+.aboutText {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #c4c4c4;
+  letter-spacing: 0.01em;
+}
+
+.aboutText + .aboutText {
+  margin-top: 3rem;
+}
+
+
+/* 여기 아코디언 */
+
+.aboutSections {
+  width: 100%;              /* 화면 가로 전부 쓰기 */
+  padding: 4rem 0 4rem;     /* 좌우 패딩은 일단 0으로 */
+}
+
+/* 한 줄 */
+.sectionItem {
+  border-bottom: 3px solid #FF7EA3;
+}
+
+/* 헤더 */
+.sectionHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-family: 'Syncopate';
+  font-weight: 700;
+  letter-spacing: -0.1rem;
+  text-transform: uppercase;
+  color: #FF7EA3;
+  padding: 0 4rem 0;
+}
+
+.sectionToggle {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #FF7EA3;
+   padding: 0 4rem 0;
+}
+
+/* 내용 영역 - 접힌 상태 */
+.sectionContent {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    max-height 0.45s cubic-bezier(0.25, 0.1, 0.25, 1),
+    opacity 0.3s ease,
+    transform 0.35s ease;
+  will-change: max-height, opacity, transform;
+}
+
+/* 열린 상태 */
+.sectionContentOpen {
+  max-height: 1200px;   /* 내용 많으면 더 키워도 됨 */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionContent p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #6a6a6a;
+  margin: 0;
+}
+
+
+/* ----- INFO 레이아웃 (왼쪽 텍스트 / 오른쪽 이미지) ----- */
+
+.infoContent {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+
+}
+
+.infoLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.infoMeta p {
+  font-family: 'pretendard';
+  margin: 0.15rem 0;
+  font-size: 0.9rem;
+  color: #525252;
+}
+
+.infoMeta span {
+  display: inline-block;
+  width: 70px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #525252;
+  margin-right: 0.5rem;
+}
+
+.sectionContent .infoBody {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #525252;
+  width: 400px;
+}
+
+.infoRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoImagePlaceholder {
+  width: 300px;
+  height: 400px;
+  background: #ffffff; /* 나중에 background-image로 교체해도 됨 */
+}
+
+/* ----- GET IN TOUCH (2열) ----- */
+
+.twoColTable {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  column-gap: 1.5rem;
+}
+
+.rowLabel {
+  font-size: 1.2rem;
+   font-family: 'pretendard';
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #525252;
+}
+
+.rowValue {
+  font-size: 1.2rem;
+  font-family: 'pretendard';
+  color: #525252;
+}
+
+/* ----- EDUCATION / AWARDS / WORK (3열 테이블) ----- */
+
+.tableList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 70px 40px 1fr;  /* year | month | desc */
+  column-gap: 1.5rem;
+  font-size: 1.2rem;
+   font-family: 'pretendard';
+  color: #525252;
+}
+
+.year,
+.month {
+  font-variant-numeric: tabular-nums;
+}
+
+.desc {
+  color: #525252;
+}
+
+/* ----- SKILL: 카드 가로 나열 ----- */
+
+.skillGrid {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+}
+
+.skillCard {
+  width: 120px;
+  height: 90px;
+  background: #ffffff; /* 나중에 아이콘/이미지 넣을 자리 */
+}

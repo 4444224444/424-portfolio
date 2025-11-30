@@ -1,61 +1,30 @@
-/* src/components/layout/Header.module.css */
-
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 64px;
-  padding: 0 20px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: #141414;
-  z-index: 200; /* 메뉴 오버레이보다 위 */
+  top: 16px;
+  right: 16px;
+  padding: 0;
+  width: auto;
+  z-index: 200;
+  margin-right: 4rem; 
 }
 
-.hamburgerBtn {
-  width: 32px;
-  height: 24px;
+/* 기본 MENU 버튼 */
+.menuBtn {
+  background-color: #FF7EA3;
+  height: 40px;
+  width: 110px;
+  color: #ffffff;           
   border: none;
-  background: none;
+  border-radius: 100px;
+  padding: 10px 20px;        
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
-  position: relative;
+  transition: all 0.25s ease;
 }
 
-.hamburgerBtn span {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  border-radius: 999px;
-  background-color: #C0C6D2;
-  transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease;
-}
-
-.hamburgerBtn span:nth-child(1) {
-  top: 2px;
-}
-
-.hamburgerBtn span:nth-child(2) {
-  top: 11px;
-}
-
-.hamburgerBtn span:nth-child(3) {
-  top: 20px;
-}
-
-/* 메뉴 열렸을 때: 햄버거 → X */
-.open span:nth-child(1) {
-  top: 11px;
-  transform: rotate(45deg);
-}
-
-.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.open span:nth-child(3) {
-  top: 11px;
-  transform: rotate(-45deg);
+/* OPEN 상태일 때 → CLOSE */
+.menuBtn.open {
+  background-color: #ffffff; 
+  color: #FF7EA3;           
 }

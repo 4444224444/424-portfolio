@@ -1,0 +1,229 @@
+.panelWrapper {
+  position: fixed;
+  top: 70px;           
+  right: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 320px;       
+  z-index: 300;
+  margin-right: 2rem; 
+}
+
+.panelBox {
+  width: 100%;       /* 부모 너비 전부 쓰기 */
+  max-width: 800px;  /* 필요하면 최대 너비 제한 */
+  padding: 20px 20px;
+  border-radius: 15px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  transform: translateY(16px);
+  animation: panelFadeIn 0.45s ease-out forwards;
+}
+
+
+.panelWrapper > .panelBox:nth-child(1) {
+  animation-delay: 0.02s;
+}
+.panelWrapper > .panelBox:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.panelWrapper > .panelBox:nth-child(3) {
+  animation-delay: 0.22s;
+}
+
+
+@keyframes panelFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navBar {
+  display: flex;
+  height: 14rem;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navLink {
+  display: flex;              /* flex 활성화 */
+  align-items: center;        /* 세로 가운데 */
+  justify-content: flex-start;/* 가로는 왼쪽 정렬 유지 */
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 100px;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #9A9A9A;
+  background: transparent;
+  border: none;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease;
+}
+
+
+.navLink:hover {
+  transform: translateX(2px);
+  background-color: #ffe0ec;
+  color: #FF7EA3;
+}
+
+.navLinkActive {
+  background-color: #FF7EA3;
+  color: #ffffff;
+}
+
+
+/*이메일박스*/
+
+.emailForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;              /* 조금만 여유 있게 */
+  justify-content: center; /* 상하 가운데 정렬 */
+  padding: 10px 0;         /* 양쪽 여백 조정 */
+}
+
+/* label 더 크게 */
+.emailLabel {
+  font-size: 22px;
+  text-transform: lowercase;
+  justify-content: center; /* 상하 가운데 정렬 */
+  color: #9A9A9A;
+}
+
+/* input 텍스트 + placeholder 둘 다 크게 */
+.emailInput {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  background-color: #f3f3f3;
+  font-size: 15px;    
+  color: #555555;
+}
+
+.emailInput::placeholder {
+  color: #b3b3b3;
+  font-size: 16px;       /* placeholder도 통일 */
+}
+
+
+.emailHelper {
+  font-size: 11px;     
+  text-transform: lowercase;
+  color: #b5b5b5;
+  margin-top: 2px;
+}
+
+.pinkPanel {
+  background: #f47ba8;
+  border-color: #f47ba8;
+  color: #ffffff;
+  height: 5rem;
+
+  display: flex;              /* flex 켜기 */
+  align-items: center;        /* 세로 가운데 */
+  justify-content: flex-start;/* 가로는 왼쪽 정렬 유지 */
+  padding-left: 20px;         /* 글씨가 너무 붙지 않게 */
+}
+.pinkPanelText {
+  font-size: 22px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+
+
+
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .panelWrapper {
+    top: 72px;
+    right: 24px;
+    width: 240px;
+    gap: 16px;
+  }
+
+  .panelBox {
+    padding: 18px 20px;
+    border-radius: 20px;
+  }
+
+  .navLink {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .emailLabel {
+    font-size: 14px;
+  }
+
+  .emailInput {
+    font-size: 13px;
+  }
+
+  .pinkPanelText {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .panelWrapper {
+    top: 72px;
+    right: 16px;
+    left: 16px;        
+    width: auto;        
+    gap: 14px;
+  }
+
+  .panelBox {
+    padding: 14px 16px;
+    border-radius: 18px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  }
+
+  .navBar {
+    gap: 8px;
+  }
+
+  .navLink {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .emailLabel {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+  }
+
+  .emailInput {
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+
+  .emailHelper {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .emailButton {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+
+  .pinkPanelText {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+  }
+}

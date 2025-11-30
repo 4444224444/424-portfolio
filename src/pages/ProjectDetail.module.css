@@ -1,34 +1,249 @@
-.projectDetailPage {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+:root {
+  --header-height: 56px;
 }
 
-.detailInner {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 80px 10vw;
+/* 페이지 전체가 한 씬 */
+.projectDetailPage {
+  width: 100vw;
+  height: calc(100vh - var(--header-height));
+  margin-top: var(--header-height);
+  background-color: #e7e7e7;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 }
+
+/* 화면 전체를 쓰는 sticky container */
+.stickyContainer {
+  width: 100vw;
+  height: 100%;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* BACK 버튼 */
+.topBar {
+  position: absolute;
+  top: 26px;
+  left: 40px;
+  z-index: 20;
+  margin-left: 4rem;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: #9A9A9A;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* 가로 슬라이드 트랙 */
+.horizontalTrack {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease-out;
+}
+
+/* 각 슬라이드 = 전체 화면 */
+.slide {
+  width: 100vw;
+  height: 100%;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 첫 화면: 텍스트 + 이미지 2컬럼 */
+.contentRow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 6vw 7vw;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* ------- 왼쪽 텍스트 영역 ------- */
 
 .detailText {
   width: 40%;
+  min-width: 480px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: center;
 }
 
-.detailImage {
-  width: 55%;
+/* 프로젝트 타이틀 */
+.title {
+  font-family: 'Syncopate', sans-serif;
+  font-size: clamp(3.2rem, 5vw, 4.4rem);
+  letter-spacing: -0.01em;
+  color: #ff7ea3;
+  margin: 0 0 26px 0;
+  text-transform: uppercase;
+}
+
+/* 본문 + TOOL 블록 */
+.descBlock {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  margin-bottom: 36px;
+}
+
+.desc {
+  font-family: 'pretendard';
+  font-size: 13px;
+  line-height: 1.7;
+  color: #666;
+  max-width: 480px;
+}
+
+/* TOOL 라벨 + 리스트 */
+.toolsBlock {
+  min-width: 80px;
+}
+
+.toolsLabel {
+  font-size: 11px;
+  font-family: 'pretendard';
+  text-transform: uppercase;
+  color: #b7b7b7;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.toolsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  font-family: 'pretendard';
+  line-height: 1.7;
+  color: #a5a5a5;
+}
+
+/* VISIT WEB 버튼 */
+.linkButton {
+  height: 40px;
+  width: 160px;
+
+  display: flex;               /* ← 중앙 정렬 핵심 */
+  align-items: center;         /* 세로 중앙 */
+  justify-content: center;     /* 가로 중앙 */
+
+  padding: 10px;
+  margin-top: 18px;
+
+  background-color: #ff7ea3;
+  color: #ffffff;
+  border-radius: 999px;
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+
+/* ------- 오른쪽 이미지 박스 ------- */
+
+.detailImageWrapper {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.detailImageBox {
+  width: 100%;
+  max-width: 720px;
+  height: 60vh;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
+}
+
+.detailImageBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detailImageEmpty {
+  width: 100%;
+  height: 100%;
+}
+
+/* ------- 뒤 슬라이드 : 전체 이미지 ------- */
+/* 전체 슬라이드 안에서 중앙 정렬 */
+.fullImageWrapper {
+  width: 100%;
+  height: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.detailImage img {
+/* 🔵 가로형 이미지 (16:9) */
+.landscapeBox {
+  width: 70vw;
+  height: 80vh;
+
+  max-width: 1200px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+.landscapeBox img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
+  height: 100%;
+  object-fit: cover;   /* 잘라도 자연스럽게 보이는 거 */
+}
+
+
+/* 🟣 세로형 이미지 */
+.portraitBox {
+  width: 40vw;
+  height: 80vh;
+
+  max-width: 650px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+.portraitBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* 절대 안 잘림 */
+  background: #fff;
+}
+
+/* ------- 스크롤 안내 ------- */
+
+.scrollHint {
+  position: absolute;
+  bottom: 26px;
+  right: 40px;
+  font-size: 11px;
+  color: #b7b7b7;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
 }

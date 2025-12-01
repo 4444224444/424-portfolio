@@ -174,8 +174,12 @@ const sections = [
 
       {/* 소개글 */}
       <div className={styles.aboutTextContainer}>
-        <p className={styles.aboutText}>설명</p>
-        <p className={styles.aboutText}>텍스트</p>
+        <p className={styles.aboutText}>안녕하세요, 창의적인 프론트엔드 개발자 정혜진입니다!
+        새로운 방식으로 화면을 풀어내고, 기존에 없던 흐름을 만들어보는 일을 좋아합니다.
+        작은 디테일 하나라도 더 나은 방향이 있다면 과감히 바꿔보고, 새로운 시도를 통해 더 자연스러운 사용자 경험을 찾고 싶습니다.
+        정해진 틀에 머무르기보다, 아이디어를 실험하고 확장해 서비스에 새로운 감각을 더하는 것을 강점으로 삼고 있는 저는.
+        앞으로도 계속 도전하며 한 단계 더 완성도 높은 웹을 만드는 개발자가 되고자 합니다.</p>
+        <p className={styles.aboutText}>아래로 스크롤하고, 클릭하며 저에 대한 정보를 확인해 주세요!</p>
       </div>
 
       {/* 아코디언 */}

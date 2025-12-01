@@ -103,14 +103,15 @@
 
 .aboutTextContainer {
   margin-left: 4rem;
-  max-width: 800px;
+  max-width: 850px;
 }
 
 .aboutText {
   font-size: 1.3rem;
+  font-family: 'pretendard';
   line-height: 1.7;
-  color: #c4c4c4;
-  letter-spacing: 0.01em;
+  color: #656565;
+  letter-spacing: -0.09rem;
 }
 
 .aboutText + .aboutText {
